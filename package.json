@@ -9,6 +9,7 @@
   "author": "Ryan Sickles",
   "license": "ISC",
   "dependencies": {
-    "nodejs-text-summarizer": "^2.0.3"
+    "nodejs-text-summarizer": "^2.0.3",
+    "plain-text-data-to-json": "^1.0.1"
   }
 }

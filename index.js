@@ -15,15 +15,25 @@ exports.handler = (event, context) => {
     switch (event.request.type) {
       
       case "LaunchRequest":
-        console.log(event.request.type);
-        // Launch Request
-        console.log(`LAUNCH REQUEST`)
-        context.succeed(
+        // Intent Request
+        console.log(`INTENT REQUEST`)
+        var dbParameters = {
+              TableName : 'urgentemails',
+              limit : 1
+            };
+            db.scan(dbParameters, function(err,data){
+              if(err){
+                console.log("Can't get from DB");
+              }else{
+                var summary = data['Items'][0]["body"];
+                context.succeed(
           generateResponse(
-            buildSpeechletResponse("Welcome to an Accenture Summary Skill", true),
+            buildSpeechletResponse(summary, true),
             {}
           )
         )
+              }
+            });
         break;
       
       case "IntentRequest":
