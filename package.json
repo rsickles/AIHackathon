@@ -1,0 +1,14 @@
+{
+  "name": "aihackathonlambda",
+  "version": "1.0.0",
+  "description": "AI Hackathon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryan Sickles",
+  "license": "ISC",
+  "dependencies": {
+    "nodejs-text-summarizer": "^2.0.3"
+  }
+}
